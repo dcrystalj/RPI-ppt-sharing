@@ -2,7 +2,7 @@
 while :
 do
 	TV=`/opt/vc/bin/tvservice -s | cut -c 17-25`
-	STATE=`cat /sys/class/net/wlan0/operstate`
+	STATE=`cat /sys/class/net/wlan0/operstate 2>/dev/null`
 
 	echo $TV
 	echo $STATE
@@ -16,7 +16,7 @@ do
 		 fi
 		 
 		 sleep 3
-		 /home/pi/VNC 192.168.1.165
+		 /home/pi/VNC UserName=Guest SecurityNotificationTimeout=0 192.168.173.1
 	fi
 	
 	sleep 2
